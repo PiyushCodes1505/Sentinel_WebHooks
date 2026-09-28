@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "functions": {
+    "app/api/queue/webhooks/route.ts": {
+      "experimentalTriggers": [
+        {
+          "type": "queue/v2beta",
+          "topic": "sentinel-webhooks",
+          "retryAfterSeconds": 2
+        }
+      ]
+    }
+  }
+}
